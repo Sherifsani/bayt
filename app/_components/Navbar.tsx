@@ -2,11 +2,31 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
   const pathname = usePathname();
 
   const isActive = (href: string) => pathname === href;
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > window.innerHeight && currentScrollY > lastScrollY) {
+      setIsVisible(false); // Hide navbar when scrolling down after 100vh
+    } else {
+      setIsVisible(true); // Show navbar when scrolling up
+    }
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   const navItems = [
     { value: "Home", href: "/" },
@@ -16,7 +36,11 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="p-2 flex justify-center">
+    <header
+      className={`fixed top-4 left-0 w-full bg-white  transition-transform duration-300 z-50 flex justify-center items-center${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <nav className="flex border-[#eceaea] border-[1px] rounded-full px-4  gap-5">
         {navItems.map((item) => (
           <Link
