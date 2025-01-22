@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -37,6 +38,9 @@ const Navbar = () => {
 
   return (
     <header
+      // initial={{ transform: "translateY(-110%)" }}
+      // animate={{ transform: "translateY(0px)" }}
+      // // transition={{ type: " " }}
       className={`fixed top-2 left-0 w-full bg-white transition-transform duration-300 z-50 flex justify-center items-center ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
