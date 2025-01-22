@@ -26,7 +26,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, []); // Empty dependency array to add the event listener only once
 
   const navItems = [
     { value: "Home", href: "/" },
@@ -37,11 +37,11 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-4 left-0 w-full bg-white  transition-transform duration-300 z-50 flex justify-center items-center${
+      className={`fixed top-2 left-0 w-full bg-white transition-transform duration-300 z-50 flex justify-center items-center ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="flex border-[#eceaea] border-[1px] rounded-full px-4  gap-5">
+      <nav className="flex border-[#eceaea] border-[1px] rounded-full px-4 gap-5">
         {navItems.map((item) => (
           <Link
             key={item.href}
