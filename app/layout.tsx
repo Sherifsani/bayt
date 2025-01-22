@@ -1,24 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Figtree } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+const figtree = Figtree({
+  variable: "--font-figtree",
+  subsets: ["latin"],
+});
 
-const inter = Inter(
-  {
-    subsets: ["latin"],
-    weight: "400",
-  }
-)
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,11 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased overflow-x-hidden`}
+        className={`${figtree.className} antialiased overflow-x-hidden w-screen`}
       >
         <Navbar />
-        {children}
-        
+        <div className="max-w-[1024px] mx-auto px-3">{children}</div>
       </body>
     </html>
   );

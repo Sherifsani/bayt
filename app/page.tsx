@@ -1,9 +1,10 @@
-import Image from "next/image";
-
+import Hero from "./_components/Hero";
+import HeroProjects from "./_components/HeroProjects";
 export default function Home() {
   return (
     <main>
-      <div></div>
+      <Hero />
+      <HeroProjects />
     </main>
   );
 }
