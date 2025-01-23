@@ -110,7 +110,7 @@ const page = () => {
         </a>
       </div>
       <div className="social flex justify-end gap-2 py-10">
-        <a href="wa.me/+2348060517731">
+        <a href="www.wa.me/+2348060517731">
           <BiLogoWhatsapp className="text-3xl text-[#25d366]" />
         </a>
         <a href="https://www.linkedin.com/in/sherif-sani/">
