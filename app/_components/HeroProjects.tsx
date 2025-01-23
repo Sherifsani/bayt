@@ -5,7 +5,7 @@ import { homeProjectData } from "../../data/index";
 
 const HeroProjects = () => {
   return (
-    <section className="hero-projects mt-20 flex flex-col gap-4">
+    <section className="hero-projects my-20 flex flex-col gap-4">
       <h2 className="font-[500] text-lg md:text-xl tracking-tight ">
         What I've been working on
       </h2>
