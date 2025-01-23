@@ -45,12 +45,12 @@ const Navbar = () => {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="flex border-[#eceaea] border-[1px] rounded-full px-4 gap-5">
+      <nav className="flex border-[#eceaea] border-[1px] rounded-full px-4 gap-5 md:gap-7 lg:gap-10">
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className={`py-2 ${
+            className={`py-2 md:text-lg lg:text-xl ${
               isActive(item.href) ? "font-medium active" : ""
             }`}
           >

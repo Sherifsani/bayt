@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Figtree } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Figtree, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
@@ -14,15 +14,14 @@ const figtree = Figtree({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: "400",
-});
+const barlow_condensed = Barlow_Condensed(
+  {
+    variable: "--font-barlow-condensed",
+    subsets: ["latin"],
+    weight: ["400", "700"],
+  
+  }
+)
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -37,10 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${figtree.className} antialiased overflow-x-hidden w-screen`}
+        className={`${figtree.className} ${barlow_condensed.variable} antialiased overflow-x-hidden w-screen`}
       >
         <Navbar />
-        <div className="max-w-[1024px] mx-auto px-3">{children}</div>
+        <div className="max-w-[1000px] mx-auto px-6">{children}</div>
         <Footer />
       </body>
     </html>

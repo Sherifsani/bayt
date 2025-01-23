@@ -15,7 +15,7 @@ export const homeProjectData = [
     title: "Serverless Notification",
     description:
       "This project is an AWS-powered notification service that allows sending emails or SMS messages to users. It leverages Lambda, SNS, SES, Step Functions, and API Gateway for serverless functionality and scalability.",
-    stack: [ "lambda", "steps", "sns", "ses", "api-gateway"],
+    stack: [ "lambda", "steps", "sns", "ses", "api"],
 },
 {
     id: 3,
