@@ -13,7 +13,7 @@ const ProjectCard = ({ title, src, description, stack }: ProjectCardProps) => {
       <img
         src={src}
         alt="project1"
-        className="rounded-md w-1/2 h-auto p-[2px] bg-[#22222212] md:w-[200px] md:h-[150px]"
+        className="rounded-md  p-[2px] bg-[#22222212] w-[200px] h-[150px]"
         width={100}
         height={100}
       />
