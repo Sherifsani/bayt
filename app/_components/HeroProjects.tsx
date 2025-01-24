@@ -10,15 +10,18 @@ const HeroProjects = () => {
         What I've been working on
       </h2>
       <div className="project-grid grid gap-10">
-        {homeProjectData.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            src={`/${project.src}`}
-            description={project.description}
-            stack={project.stack}
-          />
-        ))}
+        {homeProjectData.map(
+          (project, index) =>
+            project.id < 4 && (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                src={`/${project.src}`}
+                description={project.description}
+                stack={project.stack}
+              />
+            )
+        )}
       </div>
     </section>
   );
