@@ -10,6 +10,8 @@
   font-style: normal;
 }
 
+
+
 body {
   overflow-x: hidden;
   width: 100vw;
@@ -40,4 +42,9 @@ header nav .active:before {
 
 p {
   @apply text-gray-600
+}
+
+.marquee img {
+  width: 20px;
+  height: 20px;
 }

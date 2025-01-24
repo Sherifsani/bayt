@@ -11,7 +11,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="contact-section py-16 px-6 md:px-16 bg-gray-100"
+      className="contact-section md:px-16  mt-32"
     >
       <motion.div
         className=""
@@ -31,13 +31,13 @@ const Contact = () => {
       </motion.div>
 
       <motion.form
-        className="contact-form mx-auto max-w-lg bg-white shadow-md rounded-lg p-6"
+        className="contact-form mx-auto grid lg:grid-cols-2 gap-6  rounded-lg "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeIn}
       >
-        <div className="mb-4">
+        <div className="">
           <label
             htmlFor="name"
             className="block text-sm font-medium text-gray-700"
@@ -51,7 +51,7 @@ const Contact = () => {
             placeholder="Your Name"
           />
         </div>
-        <div className="mb-4">
+        <div className="">
           <label
             htmlFor="email"
             className="block text-sm font-medium text-gray-700"
@@ -65,7 +65,7 @@ const Contact = () => {
             placeholder="Your Email"
           />
         </div>
-        <div className="mb-4">
+        <div className="lg:col-span-2">
           <label
             htmlFor="message"
             className="block text-sm font-medium text-gray-700"
@@ -81,14 +81,14 @@ const Contact = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-40 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           Send Message
         </button>
       </motion.form>
 
       <motion.div
-        className="mt-12 text-center"
+        className="mt-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
