@@ -13,7 +13,7 @@ import Marquee from "react-fast-marquee";
 
 const SkillBanner = () => {
   return (
-    <div className="marquee flex gap-4 w-full flex-wrap">
+    <div className="marquee flex gap-4 w-full flex-wrap justify-center">
       <img
         src="https://skillicons.dev/icons?i=aws"
         height="40"

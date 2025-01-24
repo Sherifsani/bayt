@@ -41,11 +41,11 @@ const Navbar = () => {
       // initial={{ transform: "translateY(-110%)" }}
       // animate={{ transform: "translateY(0px)" }}
       // // transition={{ type: " " }}
-      className={`fixed top-2 left-0 w-full bg-white transition-transform duration-300 z-50 flex justify-center items-center ${
+      className={`bg-gray-100 fixed top-2 left-0 w-full  transition-transform duration-300 z-50 flex justify-center items-center ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="flex border-[#eceaea] border-[1px] rounded-full px-4 gap-5 md:gap-7 lg:gap-10">
+      <nav className="flex bg-white border-[#eceaea] border-[1px] rounded-full px-4 gap-5 md:gap-7 lg:gap-10">
         {navItems.map((item) => (
           <Link
             key={item.href}
