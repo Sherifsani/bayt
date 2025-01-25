@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { BiLogoLinkedin, BiLogoWhatsapp } from "react-icons/bi";
+import { CardBody, CardContainer, CardItem } from "../_components/ui/3d-card";
+import { div } from "motion/react-client";
 
 const page = () => {
   // Variants for the images
@@ -18,7 +20,7 @@ const page = () => {
   };
 
   const images = [
-    { src: "/sherif-1.png", className: "rounded-md rotate-3 shadow-lg" },
+    { src: "/sherif-1.png", className: "rounded-md hover:rotate-3 shadow-lg" },
     { src: "/sherif-3.png", className: "rounded-md -rotate-6 shadow-lg" },
     { src: "/sherif-2.png", className: "rounded-md -rotate-12 shadow-lg" },
     { src: "/sherif-1.png", className: "rounded-md shadow-lg" },

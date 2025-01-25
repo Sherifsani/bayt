@@ -38,10 +38,7 @@ const Navbar = () => {
 
   return (
     <header
-      // initial={{ transform: "translateY(-110%)" }}
-      // animate={{ transform: "translateY(0px)" }}
-      // // transition={{ type: " " }}
-      className={`bg-gray-100 fixed top-2 left-0 w-full  transition-transform duration-300 z-50 flex justify-center items-center ${
+      className={`bg-gray-100 fixed top-2 left-0 w-full backdrop-blur-lg  transition-transform duration-300 z-50 flex justify-center items-center ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
