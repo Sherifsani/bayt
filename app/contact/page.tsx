@@ -94,7 +94,7 @@ const Contact = () => {
         viewport={{ once: true }}
         variants={fadeIn}
       >
-        <p className="text-gray-700">
+        <p className="text-gray-700 mb-32">
           Prefer email? You can also reach me at{" "}
           <a
             href="mailto:sanisherif@example.com"
@@ -110,22 +110,3 @@ const Contact = () => {
 
 export default Contact;
 
-// import React from 'react'
-
-// const Contact = () => {
-//   return (
-//     <main className="mt-32 flex flex-col gap-8 md:gap-10">
-//       <section className="intro flex flex-col gap-2">
-//         <div className="text-4xl">📧</div>
-//         <h1 className="font-[600] text-2xl md:text-3xl tracking-tight lg:text-4xl">
-//           About me
-//         </h1>
-//           </section>
-//           <section>
-//               Reach out to me
-//           </section>
-//     </main>
-//   );
-// }
-
-// export default Contact
