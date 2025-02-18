@@ -42,7 +42,7 @@ export default function RootLayout({
         className={`${figtree.className} ${barlow_condensed.variable} antialiased overflow-x-hidden w-screen bg-gray-100`}
       >
         <Navbar />
-        <div className="max-w-[920px] mx-auto px-6 ">{children}</div>
+        <div className="max-w-[900px] mx-auto px-6 ">{children}</div>
         <Footer />
       </body>
     </html>

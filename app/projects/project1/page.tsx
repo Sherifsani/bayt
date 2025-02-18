@@ -2,19 +2,19 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div className="project-page flex flex-col gap-10 mb-40">
       <div className="head mt-16 grid grid-cols-1 gap-5">
-        <div className="img">
+        <div className="img w-full grid place-items-center overflow-hidden">
           <img
             src="/project-1.png"
             alt=""
-            className="w-full md:w-3/4 mx-auto"
+            className="w-full md:w-4/5 mx-auto"
           />
         </div>
         <h1 className="font-[600] mt-5 text-2xl md:text-3xl tracking-tight lg:text-4xl">
           Scalable Wordpress Deployment
         </h1>
-        <hr className="w-full" />
+        <hr className="w-full h-[1.5px] bg-black" />
 
         <p className="flex flex-col gap-5 text-[15px] md:text-base">
           <span>
@@ -39,17 +39,52 @@ const page = () => {
         </p>
       </div>
 
-      <div className="features">
+      <div className="features flex flex-col gap-4">
         <h1 className="font-[600] mt-5 text-xl md:text-2xl tracking-tight lg:text-3xl">
-          Features
+          Features 🌟
         </h1>
-        <hr className="w-full" />
-        <ul className="features-list">
+        <hr className="w-full h-[1.5px] bg-black" />
+        <ul className="features-list flex flex-col gap-3 pl-4 md:pl-10">
           <li className="">
             <span>Infrastructure as Code (IaC):</span> Full infrastructure
             provisioning using Terraform.
           </li>
           Here are the data inserted into the format:
+          <li className="">
+            <span>RDS:</span> Managed database service for MySQL to store
+            WordPress data.
+          </li>
+          <li className="">
+            <span>Secure Setup:</span> IAM roles, security groups, and access
+            management configured to ensure secure communication and access to
+            resources.
+          </li>
+          <li className="">
+            <span>Application Load Balancer:</span> Configured to distribute
+            traffic evenly across ECS tasks
+          </li>
+          <li className="">
+            <span>Scalability:</span> Auto-scaling capabilities for both ECS
+            tasks and RDS instances based on demand.
+          </li>
+          <li className="">
+            <span>Persistent Storage:</span> Integration of Amazon EFS for
+            shared storage between containers.
+          </li>
+        </ul>
+      </div>
+
+      <div className="technologies flex flex-col gap-4">
+        <h2 className="font-[600] mt-5 text-xl md:text-2xl tracking-tight lg:text-3xl">
+          Technologies used 🛠️
+        </h2>
+        <hr className="w-full h-[1.5px] bg-black" />
+
+        <ul className="features-list flex flex-col gap-3 pl-4 md:pl-10">
+          <li className="">
+            <span>Infrastructure as Code (IaC):</span> Full infrastructure
+            provisioning using Terraform.
+          </li>
           <li className="">
             <span>RDS:</span> Managed database service for MySQL to store
             WordPress data.
@@ -75,54 +110,17 @@ const page = () => {
         </ul>
       </div>
 
-      <div className="technologies">
+      <div className="links flex flex-col gap-4">
         <h2 className="font-[600] mt-5 text-xl md:text-2xl tracking-tight lg:text-3xl">
-          Technologies used
+          Links 🔗
         </h2>
-        <hr className="w-full" />
-
-        <ul className="features-list">
-          <li className="">
-            <span>Infrastructure as Code (IaC):</span> Full infrastructure
-            provisioning using Terraform.
-          </li>
-          Here are the data inserted into the format:
-          <li className="">
-            <span>RDS:</span> Managed database service for MySQL to store
-            WordPress data.
-          </li>
-          <li className="">
-            <span>Secure Setup:</span> IAM roles, security groups, and access
-            management configured to ensure secure communication and access to
-            resources.
-          </li>
-          <li className="">
-            <span>Application Load Balancer:</span> Configured to distribute
-            traffic evenly across ECS tasks deployed in private subnets,
-            ensuring high availability.
-          </li>
-          <li className="">
-            <span>Scalability:</span> Auto-scaling capabilities for both ECS
-            tasks and RDS instances based on demand.
-          </li>
-          <li className="">
-            <span>Persistent Storage:</span> Integration of Amazon EFS for
-            shared storage between containers.
-          </li>
-        </ul>
-      </div>
-
-      <div className="links ">
-        <h2 className="font-[600] mt-5 text-xl md:text-2xl tracking-tight lg:text-3xl">
-          Links
-        </h2>
-        <hr className="w-full" />
-        <p>
+        <hr className="w-full h-[1.5px] bg-black" />
+        <p className="pl-10">
           <span>Github repo: </span>
           <a>Here</a>
         </p>
 
-        <p>
+        <p className="pl-10">
           <span>Live: </span>
           <a>not live</a>
         </p>
