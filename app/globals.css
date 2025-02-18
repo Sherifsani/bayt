@@ -119,3 +119,11 @@ p {
 .image-showcase img:hover {
   transform: rotateX(10deg)
 }
+
+.features-list li {
+  list-style-type: disc;
+}
+
+.features-list li span {
+  font-weight: 500;
+}
