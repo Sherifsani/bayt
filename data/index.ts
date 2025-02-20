@@ -10,13 +10,40 @@ export const homeProjectData = [
       overview:
         "This project demonstrates the automated deployment of a secure WordPress website on AWS using Terraform for infrastructure provisioning. The setup includes Amazon ECS (Elastic Container Service) with Fargate as the launch type, Amazon RDS for database management, and Amazon EFS for persistent storage. Application Load Balancer (ALB) is used to serve the ECS tasks running in private subnets for enhanced security. The architecture is designed for scalability, high availability, and security, ensuring that the WordPress application can handle varying levels of traffic and maintain data integrity.This project demonstrates the automated deployment of a secure WordPress website on AWS using Terraform for infrastructure provisioning.The architecture is designed for scalability, high availability, and security, ensuring that the WordPress application can handle varying levels of traffic and maintain data integrity.",
       features: [
-        "Infrastructure as Code (IaC): Full infrastructure provisioning using Terraform.",
-        "ECS with Fargate: Containerized WordPress deployment with the flexibility of Fargate, enabling serverless computing.",
-        "RDS: Managed database service for MySQL to store WordPress data.",
-        "Secure Setup: IAM roles, security groups, and access management configured to ensure secure communication and access to resources.",
-        "Application Load Balancer: Configured to distribute traffic evenly across ECS tasks deployed in private subnets, ensuring high availability.",
-        "Scalability: Auto-scaling capabilities for both ECS tasks and RDS instances based on demand.",
-        "Persistent Storage: Integration of Amazon EFS for shared storage between containers.",
+        {
+          title: "Infrastructure as Code (IaC)",
+          content: "Full infrastructure provisioning using Terraform.",
+        },
+        {
+          title: "ECS with Fargate",
+          content:
+            "Containerized WordPress deployment with the flexibility of Fargate, enabling serverless computing.",
+        },
+        {
+          title: "RDS",
+          content:
+            "Managed database service for MySQL to store WordPress data.",
+        },
+        {
+          title: "Secure Setup",
+          content:
+            "IAM roles, security groups, and access management configured to ensure secure communication and access to resources.",
+        },
+        {
+          title: "Application Load Balancer",
+          content:
+            "Configured to distribute traffic evenly across ECS tasks deployed in private subnets, ensuring high availability.",
+        },
+        {
+          title: "Scalability",
+          content:
+            "Auto-scaling capabilities for both ECS tasks and RDS instances based on demand.",
+        },
+        {
+          title: "Persistent Storage",
+          content:
+            "Integration of Amazon EFS for shared storage between containers.",
+        },
       ],
       technologies: ["Aws", "Terraform", "Ecs", "Rds", "Efs", "Alb"],
       links: [
@@ -50,5 +77,13 @@ export const homeProjectData = [
     description:
       "Pixalot is web app that allows users to lookup and download images from pexels. It uses the pexels API to fetch images and display them to the user",
     stack: ["html", "javascript", "api", "tailwindcss"],
+  },
+  {
+    id: 5,
+    src: "project-5.png",
+    title: "Containerized sports API",
+    description:
+      "This project showcases the development of a containerized API management system for querying sports data. It utilizes Amazon ECS (Fargate) to run containers, Amazon API Gateway to expose REST endpoints, and an external Sports API for real-time data retrieval. ",
+    stack: ["python", "docker", "ecs", "alb", "api"],
   },
 ];
