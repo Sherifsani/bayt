@@ -53,7 +53,7 @@ async function page({ params }: { params: { slug: string } }) {
         <ul className="features-list flex flex-col gap-3 pl-4 md:pl-10">
           {project.projectPage?.technologies.map((tech, index) => (
             <li key={index}>
-              <span>{tech}</span>
+              <span>{tech.title}: </span> <span>{ tech.content}</span>
             </li>
           ))}
         </ul>
@@ -67,7 +67,7 @@ async function page({ params }: { params: { slug: string } }) {
         <p className="pl-10">
           <span>Github repo: </span>
           <a
-            href={project.projectPage?.links[0]}
+            href={project.projectPage?.links[0]?.github}
             className="text-blue-500 underline"
             target="_blank"
           >
@@ -76,9 +76,9 @@ async function page({ params }: { params: { slug: string } }) {
         </p>
         <p className="pl-10">
           <span>Live: </span>
-          {project.live ? (
+          {project.projectPage?.links && project.projectPage.links.length > 0 ? (
             <a
-              href={project.live}
+              href={project.projectPage?.links[1]?.live}
               className="text-blue-500 underline"
               target="_blank"
             >
