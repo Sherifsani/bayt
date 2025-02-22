@@ -20,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="mt-32 flex flex-col gap-8 md:gap-10 overflow-hidden">
+    <div className="mt-32 flex flex-col gap-8 md:gap-10 overflow-hidden mx-auto">
       {/* Emoji with fade-in */}
       <motion.div
         className="text-4xl"

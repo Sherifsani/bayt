@@ -54,6 +54,7 @@ const page = () => {
         {homeProjectData.map((project, index) => (
           <motion.div key={index} variants={cardVariants}>
             <ProjectCard
+              id={project.id}
               title={project.title}
               src={`/${project.src}`}
               description={project.description}

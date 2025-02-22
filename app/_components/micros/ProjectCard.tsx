@@ -1,15 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProjectCardProps {
+  id: number,
   title: string;
   src: string;
   description: string;
   stack: string[];
 }
 
-const ProjectCard = ({ title, src, description, stack }: ProjectCardProps) => {
+const ProjectCard = ({ id, title, src, description, stack }: ProjectCardProps) => {
   return (
-    <div className="project-card flex flex-col gap-8 shadow-sm py-3 rounded-sm md:grid grid-flow-col  ">
+    <Link href={`/projects/${id}`} className="project-card flex flex-col gap-8 shadow-sm py-3 rounded-sm md:grid grid-flow-col  ">
       <img
         src={src}
         alt="project1"
@@ -32,7 +34,7 @@ const ProjectCard = ({ title, src, description, stack }: ProjectCardProps) => {
             ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
