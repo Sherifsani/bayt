@@ -67,7 +67,7 @@ async function page({ params }: { params: { slug: string } }) {
         <p className="pl-10">
           <span>Github repo: </span>
           <a
-            href={project.projectPage?.links[0]?.github}
+            href={Array.isArray(project.projectPage?.links) ? project.projectPage.links[0]?.github : undefined}
             className="text-blue-500 underline"
             target="_blank"
           >
@@ -76,9 +76,9 @@ async function page({ params }: { params: { slug: string } }) {
         </p>
         <p className="pl-10">
           <span>Live: </span>
-          {project.projectPage?.links && project.projectPage.links.length > 0 ? (
+          {Array.isArray(project.projectPage?.links) && project.projectPage.links.length > 1 ? (
             <a
-              href={project.projectPage?.links[1]?.live}
+              href={project.projectPage.links?.live}
               className="text-blue-500 underline"
               target="_blank"
             >

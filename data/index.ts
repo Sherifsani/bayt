@@ -283,6 +283,7 @@ export const homeProjectData = [
       ],
       links: {
         github: "https://github.com/Sherifsani/pixalot",
+        live:"",
       },
     },
   },
