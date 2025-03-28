@@ -1,7 +1,31 @@
 import { homeProjectData } from "@/data";
 
-async function page({ params }: { params: { slug: string } }) {
-  const project = homeProjectData.find((p) => p.id === parseInt(params.slug));
+interface Feature {
+  title: string;
+  content: string;
+}
+
+interface ProjectLink {
+  title: string;
+  url: string;
+}
+
+interface ProjectPage {
+  overview: string;
+  features: Feature[];
+  technologies: string[];
+  links: ProjectLink[];
+}
+
+interface Project {
+  id: number;
+  title: string;
+  src: string;
+  projectPage: ProjectPage;
+}
+
+export default async function ProjectPage({ params }: { params: { slug: string } }) {
+  const project = homeProjectData.find((p) => p.id === parseInt(params.slug)) as Project | undefined;
 
   if (!project) {
     return (
@@ -28,7 +52,7 @@ async function page({ params }: { params: { slug: string } }) {
           {project.title}
         </h1>
         <hr className="w-full h-[1.5px] bg-black" />
-        <p className="text-[15px] md:text-base">{project.projectPage?.overview}</p>
+        <p className="text-[15px] md:text-base">{project.projectPage.overview}</p>
       </div>
 
       <div className="features flex flex-col gap-4">
@@ -37,9 +61,10 @@ async function page({ params }: { params: { slug: string } }) {
         </h1>
         <hr className="w-full h-[1.5px] bg-black" />
         <ul className="features-list flex flex-col gap-3 pl-4 md:pl-10">
-          {project.projectPage?.features.map((feature, index) => (
-            <li key={index}>
-              <span>{feature.title}: </span> {feature.content}
+          {project.projectPage.features.map((feature, index) => (
+            <li key={index} className="flex flex-col">
+              <span className="font-medium">{feature.title}</span>
+              <span className="text-gray-600">{feature.content}</span>
             </li>
           ))}
         </ul>
@@ -50,47 +75,32 @@ async function page({ params }: { params: { slug: string } }) {
           Technologies used 🛠️
         </h2>
         <hr className="w-full h-[1.5px] bg-black" />
-        <ul className="features-list flex flex-col gap-3 pl-4 md:pl-10">
-          {project.projectPage?.technologies.map((tech, index) => (
-            <li key={index}>
-              <span>{tech.title}: </span> <span>{ tech.content}</span>
-            </li>
+        <ul className="tech-list flex flex-col gap-3 pl-4 md:pl-10">
+          {project.projectPage.technologies.map((tech, index) => (
+            <li key={index} className="text-gray-600">{tech}</li>
           ))}
         </ul>
       </div>
 
       <div className="links flex flex-col gap-4">
         <h2 className="font-[600] mt-5 text-xl md:text-2xl tracking-tight lg:text-3xl">
-          Links 🔗
+          Project Links 🔗
         </h2>
         <hr className="w-full h-[1.5px] bg-black" />
-        <p className="pl-10">
-          <span>Github repo: </span>
-          <a
-            href={project.projectPage?.links?.github}
-            className="text-blue-500 underline"
-            target="_blank"
-          >
-            Here
-          </a>
-        </p>
-        <p className="pl-10">
-          <span>Live: </span>
-          {Array.isArray(project.projectPage?.links) && project.projectPage.links.length > 1 ? (
+        <div className="flex gap-4">
+          {project.projectPage.links.map((link, index) => (
             <a
-              href={project.projectPage.links?.live}
-              className="text-blue-500 underline"
+              key={index}
+              href={link.url}
               target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors"
             >
-              Visit
+              {link.title}
             </a>
-          ) : (
-            "Not live"
-          )}
-        </p>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
-
-export default page;
