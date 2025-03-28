@@ -81,12 +81,11 @@ export const homeProjectData = [
             "Load balancing solution to distribute HTTP/HTTPS traffic across ECS tasks running in private subnets.",
         },
       ],
-      links: [
-        {
-          github:
-            "https://github.com/Sherifsani/scalable-wordpress-app-terraform",
-        },
-      ],
+      links: {
+        github:
+          "https://github.com/Sherifsani/scalable-wordpress-app-terraform",
+      },
+      
     },
   },
   {

@@ -1,7 +1,7 @@
 import { homeProjectData } from "@/data";
 
 async function page({ params }: { params: { slug: string } }) {
-  const project = homeProjectData.find((p) => p.id == params.slug);
+  const project = homeProjectData.find((p) => p.id === parseInt(params.slug));
 
   if (!project) {
     return (
@@ -67,7 +67,7 @@ async function page({ params }: { params: { slug: string } }) {
         <p className="pl-10">
           <span>Github repo: </span>
           <a
-            href={Array.isArray(project.projectPage?.links) ? project.projectPage.links[0]?.github : undefined}
+            href={project.projectPage?.links?.github}
             className="text-blue-500 underline"
             target="_blank"
           >

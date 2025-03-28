@@ -14,6 +14,7 @@ const HeroProjects = () => {
           (project, index) =>
             project.id < 4 && (
               <ProjectCard
+                id={project.id}
                 key={index}
                 title={project.title}
                 src={`/${project.src}`}

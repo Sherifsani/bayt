@@ -11,7 +11,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ id, title, src, description, stack }: ProjectCardProps) => {
   return (
-    <Link href={`/projects/${id}`} className="project-card flex flex-col gap-8 shadow-sm py-3 rounded-sm md:grid grid-flow-col  ">
+    <Link href={`/projects/${id}`} className="project-card flex flex-col items-center  gap-8 shadow-sm py-3 rounded-sm md:grid grid-flow-col  ">
       <img
         src={src}
         alt="project1"
@@ -19,7 +19,7 @@ const ProjectCard = ({ id, title, src, description, stack }: ProjectCardProps) =
         width={100}
         height={100}
       />
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 items-center md:items-start">
         <h3 className="text-lg font-[600]">{title}</h3>
         <p className="text-[15px] text-gray-600">{description}</p>
         <div className="flex gap-2 mt-auto">
