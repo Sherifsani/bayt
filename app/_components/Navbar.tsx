@@ -7,17 +7,16 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   const pathname = usePathname();
-
   const isActive = (href: string) => pathname === href;
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
-    if (currentScrollY > window.innerHeight && currentScrollY > lastScrollY) {
-      setIsVisible(false); // Hide navbar when scrolling down after 100vh
+    if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+      setIsVisible(false);
     } else {
-      setIsVisible(true); // Show navbar when scrolling up
+      setIsVisible(true);
     }
     setLastScrollY(currentScrollY);
   };
@@ -27,7 +26,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array to add the event listener only once
+  }, [lastScrollY]);
 
   const navItems = [
     { value: "Home", href: "/" },
@@ -37,25 +36,41 @@ const Navbar = () => {
   ];
 
   return (
-    <header
-      className={`bg-gray-100 fixed top-2 left-0 w-full backdrop-blur-lg  transition-transform duration-300 z-50 flex justify-center items-center ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+      className="fixed top-0 left-0 w-full z-50 px-4 py-4"
     >
-      <nav className="flex bg-white border-[#eceaea] border-[1px] rounded-full px-4 gap-5 md:gap-7 lg:gap-10">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`py-2 md:text-lg lg:text-xl ${
-              isActive(item.href) ? "font-medium active" : ""
-            }`}
-          >
-            {item.value}
-          </Link>
-        ))}
-      </nav>
-    </header>
+      <motion.div 
+        className="max-w-2xl mx-auto bg-white/80 backdrop-blur-lg border border-gray-200/20 rounded-2xl shadow-lg shadow-black/5"
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.2 }}
+      >
+        <nav className="flex items-center justify-center gap-1 p-1">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="relative px-4 py-2 rounded-xl transition-colors"
+            >
+              {isActive(item.href) && (
+                <motion.div
+                  layoutId="active-pill"
+                  className="absolute inset-0 bg-purple-100 rounded-xl"
+                  transition={{ type: "spring", duration: 0.6 }}
+                />
+              )}
+              <span className={`relative z-10 text-sm font-medium ${
+                isActive(item.href) ? "text-purple-700" : "text-gray-600 hover:text-gray-900"
+              }`}>
+                {item.value}
+              </span>
+            </Link>
+          ))}
+        </nav>
+      </motion.div>
+    </motion.header>
   );
 };
 

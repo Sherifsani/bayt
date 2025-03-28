@@ -46,46 +46,20 @@ export const homeProjectData = [
         },
       ],
       technologies: [
-        {
-          title: "Terraform",
-          content:
-            "Infrastructure automation tool to provision and manage AWS resources.",
-        },
-        {
-          title: "AWS ECS (Fargate)",
-          content:
-            "Managed container service to run WordPress in a containerized environment.",
-        },
-        {
-          title: "Amazon RDS",
-          content:
-            "Managed relational database service used for WordPress data storage.",
-        },
-        {
-          title: "Amazon EFS",
-          content:
-            "Managed file storage to store WordPress files persistently across container instances.",
-        },
-        {
-          title: "IAM (Identity and Access Management)",
-          content: "Security mechanism for managing permissions and roles.",
-        },
-        {
-          title: "AWS Security Groups",
-          content:
-            "Virtual firewalls to control inbound and outbound traffic to instances.",
-        },
-        {
-          title: "Application Load Balancer (ALB)",
-          content:
-            "Load balancing solution to distribute HTTP/HTTPS traffic across ECS tasks running in private subnets.",
-        },
+        "Terraform",
+        "AWS ECS (Fargate)",
+        "Amazon RDS",
+        "Amazon EFS",
+        "IAM",
+        "Security Groups",
+        "Application Load Balancer"
       ],
-      links: {
-        github:
-          "https://github.com/Sherifsani/scalable-wordpress-app-terraform",
-      },
-      
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/Sherifsani/scalable-wordpress-app-terraform"
+        }
+      ]
     },
   },
   {
@@ -131,40 +105,21 @@ export const homeProjectData = [
         },
       ],
       technologies: [
-        {
-          title: "AWS Lambda",
-          content:
-            "Executes serverless functions for processing notification requests.",
-        },
-        {
-          title: "Amazon SNS",
-          content:
-            "Handles SMS notifications to ensure fast and reliable message delivery.",
-        },
-        {
-          title: "Amazon SES",
-          content:
-            "Used for sending email notifications securely and at scale.",
-        },
-        {
-          title: "AWS Step Functions",
-          content:
-            "Orchestrates the workflow of handling notifications in a structured manner.",
-        },
-        {
-          title: "Amazon API Gateway",
-          content:
-            "Provides RESTful API endpoints for triggering notifications.",
-        },
-        {
-          title: "Terraform / CloudFormation (Optional)",
-          content:
-            "Infrastructure as Code (IaC) for automated provisioning and management of AWS resources.",
-        },
+        "AWS Lambda",
+        "Amazon SNS",
+        "Amazon SES",
+        "AWS Step Functions",
+        "Amazon API Gateway",
+        "Terraform / CloudFormation (Optional)",
+        "IAM (Identity and Access Management)",
+        "AWS Security Groups"
       ],
-      links: {
-        github: "https://github.com/Sherifsani/sendingApplication",
-      },
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/Sherifsani/sendingApplication"
+        }
+      ]
     },
   },
   {
@@ -174,7 +129,6 @@ export const homeProjectData = [
     description:
       "I built an application that uses lambda to fetch nba scores result,processes it and sends an email/sms to users. The function runs on a schedule defined in amazon event-bridge and uses sns for notifications",
     stack: ["lambda", "event-bridge", "sns"],
-
     projectPage: {
       overview:
         "This project is an alert system that sends real-time NBA game day score notifications to subscribed users via SMS/Email. It leverages Amazon SNS, AWS Lambda, Python, Amazon EventBridge, and NBA APIs to provide sports fans with up-to-date game information. The system is designed to demonstrate cloud computing principles, automation, and efficient notification mechanisms.",
@@ -200,38 +154,19 @@ export const homeProjectData = [
         },
       ],
       technologies: [
-        {
-          title: "AWS Lambda",
-          content:
-            "Executes serverless functions to fetch and process NBA game data.",
-        },
-        {
-          title: "Amazon SNS",
-          content: "Sends SMS and email notifications to subscribed users.",
-        },
-        {
-          title: "Amazon EventBridge",
-          content:
-            "Schedules automated execution of Lambda functions for regular game updates.",
-        },
-        {
-          title: "NBA API (SportsData.io)",
-          content: "External API used to fetch real-time NBA game scores.",
-        },
-        {
-          title: "Python 3.x",
-          content:
-            "Primary programming language used to develop the notification system.",
-        },
-        {
-          title: "IAM Security",
-          content:
-            "Implements least privilege policies for Lambda, SNS, and EventBridge to ensure secure operations.",
-        },
+        "AWS Lambda",
+        "Amazon SNS",
+        "Amazon EventBridge",
+        "NBA API (SportsData.io)",
+        "Python 3.x",
+        "IAM Security"
       ],
-      links: {
-        github: "https://github.com/Sherifsani/nba-game-day-notifications",
-      },
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/Sherifsani/nba-game-day-notifications"
+        }
+      ]
     },
   },
   {
@@ -263,27 +198,21 @@ export const homeProjectData = [
         },
       ],
       technologies: [
-        {
-          title: "HTML",
-          content: "Used for structuring the web application interface.",
-        },
-        {
-          title: "JavaScript",
-          content: "Handles API requests and dynamic content rendering.",
-        },
-        {
-          title: "Pexels API",
-          content: "Provides access to a vast collection of free stock images.",
-        },
-        {
-          title: "Tailwind CSS",
-          content: "Used for styling and responsive layout design.",
-        },
+        "HTML",
+        "JavaScript",
+        "Pexels API",
+        "Tailwind CSS"
       ],
-      links: {
-        github: "https://github.com/Sherifsani/pixalot",
-        live:"",
-      },
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/Sherifsani/pixalot"
+        },
+        {
+          title: "Live",
+          url: ""
+        }
+      ]
     },
   },
   {
@@ -329,44 +258,21 @@ export const homeProjectData = [
         },
       ],
       technologies: [
-        {
-          title: "Flask",
-          content: "Lightweight web framework used to build the API.",
-        },
-        {
-          title: "SerpAPI",
-          content: "Google search results API used to fetch NFL schedules.",
-        },
-        {
-          title: "Docker",
-          content: "Used to containerize the application for easy deployment.",
-        },
-        {
-          title: "AWS ECS (Fargate)",
-          content:
-            "Manages containerized workloads in a serverless environment.",
-        },
-        {
-          title: "Amazon ECR",
-          content: "Stores and manages Docker images securely.",
-        },
-        {
-          title: "API Gateway",
-          content: "Exposes the API securely with managed endpoints.",
-        },
-        {
-          title: "Amazon ALB",
-          content: "Handles load balancing for ECS services.",
-        },
-        {
-          title: "CloudWatch Logs",
-          content:
-            "Provides real-time monitoring and logging of API activities.",
-        },
+        "Flask",
+        "SerpAPI",
+        "Docker",
+        "AWS ECS (Fargate)",
+        "Amazon ECR",
+        "API Gateway",
+        "Amazon ALB",
+        "CloudWatch Logs"
       ],
-      links: {
-        github: "https://github.com/Sherifsani/nfl-schedule-api",
-      },
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/Sherifsani/nfl-schedule-api"
+        }
+      ]
     },
   },
 ];
