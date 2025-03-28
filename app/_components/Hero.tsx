@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { FlipWords } from "./ui/flip-words";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { HiDownload } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -29,7 +30,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative mt-32 overflow-hidden">
+    <div className="relative mt-32 overflow-hidden py-2">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white -z-10" />
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] -z-10 opacity-50" />
@@ -72,8 +73,9 @@ const Hero = () => {
               <span className="text-[#565454] px-[.2rem] bg-[#eceaea] rounded-md">
                 cloud engineer
               </span>{" "}
-              that enjoys building things for the web. I'm also a Frontend Engineer{" "}
-              who crafts beautiful and functional sites, making things work better.
+              that enjoys building things for the web. I'm also a Frontend
+              Engineer who crafts beautiful and functional sites, making things
+              work better.
             </motion.p>
 
             <motion.p
@@ -83,9 +85,9 @@ const Hero = () => {
               variants={fadeInVariants}
               transition={{ duration: 1, ease: "easeInOut", delay: 0.7 }}
             >
-              As a Computer Science major, I'm passionate about cloud computing and
-              helping systems grow and scale. I enjoy building things that are not only
-              efficient but also easy to use.
+              As a Computer Science major, I'm passionate about cloud computing
+              and helping systems grow and scale. I enjoy building things that
+              are not only efficient but also easy to use.
             </motion.p>
 
             {/* Social Links */}
@@ -114,6 +116,7 @@ const Hero = () => {
               animate="visible"
               variants={fadeInVariants}
               transition={{ duration: 1, ease: "easeInOut", delay: 1.1 }}
+              className="flex gap-4"
             >
               <Link
                 href="#contact"
@@ -134,6 +137,13 @@ const Hero = () => {
                   />
                 </svg>
               </Link>
+              <Link
+                href="/resume.pdf"
+                target="_blank"
+                className="inline-flex items-center px-6 py-3 border-2 border-gray-200 text-gray-600 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-colors"
+              >
+                Resume <HiDownload className="ml-2 w-4 h-4" />
+              </Link>
             </motion.div>
           </div>
 
@@ -147,7 +157,7 @@ const Hero = () => {
           >
             <div className="relative w-full aspect-square max-w-md mx-auto">
               <Image
-                src="/profile.jpg"
+                src="/me.jpg"
                 alt="Sherif Sani"
                 fill
                 className="object-cover rounded-2xl shadow-2xl"

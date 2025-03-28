@@ -1,90 +1,89 @@
-import {
-  FaAws,
-  FaJava,
-  FaDocker,
-  FaPython,
-  FaJenkins,
-  FaLinux,
-  FaReact,
-} from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { FaGitlab } from "react-icons/fa6";
+"use client";
+
+import React from "react";
 import Marquee from "react-fast-marquee";
+
+const skills = [
+  { src: "https://skillicons.dev/icons?i=aws", alt: "AWS" },
+  { src: "https://skillicons.dev/icons?i=docker", alt: "Docker" },
+  { src: "https://skillicons.dev/icons?i=python", alt: "Python" },
+  { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript" },
+  { src: "https://skillicons.dev/icons?i=ts", alt: "TypeScript" },
+  { src: "https://skillicons.dev/icons?i=react", alt: "React" },
+  { src: "https://skillicons.dev/icons?i=nextjs", alt: "Next.js" },
+  { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js" },
+  { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS" },
+  { src: "https://skillicons.dev/icons?i=git", alt: "Git" },
+  { src: "https://skillicons.dev/icons?i=linux", alt: "Linux" },
+  { src: "https://skillicons.dev/icons?i=mongodb", alt: "MongoDB" },
+];
 
 const SkillBanner = () => {
   return (
-    <div className="marquee flex gap-4 w-full flex-wrap justify-center py-14">
-      <img
-        src="https://skillicons.dev/icons?i=aws"
-        height="40"
-        alt="amazonwebservices logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-        height="40"
-        alt="docker logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-        height="40"
-        alt="python logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-        height="40"
-        alt="javascript logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-        height="40"
-        alt="typescript logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-        height="40"
-        alt="react logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-        height="40"
-        alt="nextjs logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-        height="40"
-        alt="nodejs logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
-        height="40"
-        alt="bash logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
-        height="40"
-        alt="kubernetes logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-        height="40"
-        alt="java logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
-        height="40"
-        alt="sass logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-        height="40"
-        alt="css3 logo"
-      />
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
-        height="40"
-        alt="vscode logo"
-      />
-    </div>
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-semibold text-center mb-12 text-gray-900">
+          Technologies I Work With
+        </h2>
+        
+        <div className="relative">
+          {/* Gradient Overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+          
+          {/* First Marquee - Left to Right */}
+          <Marquee
+            gradient={false}
+            speed={40}
+            className="py-6"
+          >
+            {skills.map((skill, index) => (
+              <div
+                key={`${skill.alt}-1-${index}`}
+                className="mx-5 group relative"
+              >
+                <img
+                  src={skill.src}
+                  alt={skill.alt}
+                  className="h-6 w-6 transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-sm text-gray-600 whitespace-nowrap bg-white px-2 py-1 rounded-md shadow-sm">
+                    {skill.alt}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </Marquee>
+          
+          {/* Second Marquee - Right to Left */}
+          {/* <Marquee
+            gradient={false}
+            speed={40}
+            direction="right"
+            className="py-6"
+          >
+            {skills.map((skill, index) => (
+              <div
+                key={`${skill.alt}-2-${index}`}
+                className="mx-8 group relative"
+              >
+                <img
+                  src={skill.src}
+                  alt={skill.alt}
+                  className="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-sm text-gray-600 whitespace-nowrap bg-white px-2 py-1 rounded-md shadow-sm">
+                    {skill.alt}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </Marquee> */}
+        </div>
+      </div>
+    </section>
   );
 };
 
